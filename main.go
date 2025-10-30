@@ -4,6 +4,8 @@ import (
 	"fmt"
 
 	"github.com/Mentor-Paris/CleanMyWorkspace"
+
+	"CleanMyWorkspace/Clean"
 )
 
 func main() {
@@ -12,7 +14,17 @@ func main() {
 	// Afficher le souk
 	fmt.Println("=== LE SOUK AVANT NETTOYAGE ===")
 	displayWorkspace(workspace)
+
+	fmt.Println("\n🧹 Nettoyage en cours...\n")
+
+	cleanedWorkspace := Clean.CleanWorkSpace(workspace)
+
+	fmt.Println("=== LE SOUK APRES NETTOYAGE ===")
+	displayWorkspace(cleanedWorkspace)
+
+	fmt.Println("\n✨ Bravo ! Notre espace de travail est maintenant propre ! ✨")
 }
+	
 
 func displayWorkspace(workspace *[][]*string) {
 	if workspace == nil {
